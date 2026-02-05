@@ -1,10 +1,3 @@
-//
-//  CricketScoreCardUITestsLaunchTests.swift
-//  CricketScoreCardUITests
-//
-//  Created by Satyanarayana on 07/03/25.
-//
-
 import XCTest
 
 final class CricketScoreCardUITestsLaunchTests: XCTestCase {
@@ -21,9 +14,6 @@ final class CricketScoreCardUITestsLaunchTests: XCTestCase {
     func testLaunch() throws {
         let app = XCUIApplication()
         app.launch()
-
-        // Insert steps here to perform after app launch but before taking a screenshot,
-        // such as logging into a test account or navigating somewhere in the app
 
         let attachment = XCTAttachment(screenshot: app.screenshot())
         attachment.name = "Launch Screen"

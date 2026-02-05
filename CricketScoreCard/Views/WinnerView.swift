@@ -13,15 +13,12 @@ struct WinnerView: View {
     
     var body: some View {
         ZStack {
-            // Background
             Color(.systemGroupedBackground)
                 .edgesIgnoringSafeArea(.all)
             
-            // Content
             VStack(spacing: 24) {
                 Spacer()
                 
-                // Trophy icon with celebration effect
                 ZStack {
                     Circle()
                         .fill(Color.accentColor.opacity(0.1))
@@ -35,7 +32,6 @@ struct WinnerView: View {
                 .scaleEffect(showConfetti ? 1.1 : 1.0)
                 .animation(.spring(response: 0.5, dampingFraction: 0.5), value: showConfetti)
                 
-                // Winner announcement
                 VStack(spacing: 8) {
                     Text("Match Over!")
                         .font(.largeTitle)
@@ -60,7 +56,6 @@ struct WinnerView: View {
                 
                 Spacer()
                 
-                // Action button
                 Button(action: {
                     goHome = true
                 }) {
@@ -82,7 +77,6 @@ struct WinnerView: View {
             }
             .padding()
             
-            // Confetti effect
             if showConfetti {
                 ConfettiView()
                     .allowsHitTesting(false)
@@ -94,7 +88,6 @@ struct WinnerView: View {
                 repo.completeMatch(match)
             }
             
-            // Trigger confetti animation after a slight delay
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 withAnimation {
                     showConfetti = true
@@ -107,7 +100,6 @@ struct WinnerView: View {
     }
 }
 
-// Confetti effect view
 struct ConfettiView: View {
     @State private var animate = false
     
@@ -131,7 +123,6 @@ struct ConfettiView: View {
     }
 }
 
-// Single confetti piece
 struct ConfettiPiece: View {
     let colors: [Color] = [.red, .blue, .green, .yellow, .orange, .purple]
     let shapes: [AnyView] = [

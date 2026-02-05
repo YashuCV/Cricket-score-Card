@@ -1,14 +1,6 @@
-//
-//  CricketDataRepository.swift
-//  CricketScorecard
-//
-
 import CoreData
 import Foundation
 
-/// Global façade for all Core Data operations used by the app.
-/// Call `useContext(_:)` ONCE (e.g. right after your persistent‑store loads) to give the
-/// repository its live `NSManagedObjectContext`.
 final class CricketDataRepository {
     
     // MARK: – Singleton

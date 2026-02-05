@@ -1,9 +1,6 @@
 import CoreData
 
-/// Core Data stack (SQLite on disk + in‑memory helper for previews)
 enum PersistenceController {
-    
-    /// disk‑backed container used by the running app
     static let shared: NSPersistentContainer = {
         let model = NSManagedObjectModel.mergedModel(from: [Bundle.main])!
         let container = NSPersistentContainer(name: "CricketScorecard", managedObjectModel: model)
@@ -14,7 +11,6 @@ enum PersistenceController {
         return container
     }()
     
-    /// in‑memory context for SwiftUI previews
     static let previewContext: NSManagedObjectContext = {
         let model = NSManagedObjectModel.mergedModel(from: [Bundle.main])!
         let container = NSPersistentContainer(name: "Preview", managedObjectModel: model)

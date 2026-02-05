@@ -1,12 +1,6 @@
-//
-//  PreviewHelpers.swift
-//  CricketScorecard
-//
-
 import CoreData
 
 enum PreviewHelpers {
-    /// single in‑memory context for all previews
     static var previewContext: NSManagedObjectContext = {
         let model = NSManagedObjectModel.mergedModel(from: [Bundle.main])!
         let container = NSPersistentContainer(name: "Preview", managedObjectModel: model)
@@ -17,7 +11,6 @@ enum PreviewHelpers {
         return container.viewContext
     }()
     
-    /// generates a minimal sample match (with teams) for preview
     static func sampleMatch(in ctx: NSManagedObjectContext, completed: Bool) -> Match {
         let match = Match(context: ctx)
         match.matchID = UUID()

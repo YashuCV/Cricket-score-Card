@@ -22,7 +22,6 @@ struct EnterPlayersView: View {
         NavigationStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: 20) {
-                    // Header
                     VStack(alignment: .leading, spacing: 8) {
                         Text("Match Setup")
                             .font(.largeTitle)
@@ -35,19 +34,16 @@ struct EnterPlayersView: View {
                     }
                     .padding(.vertical)
                     
-                    // Team Sections
                     teamSection(label: "Team A", team: $teamAName, players: $teamAPlayers, teamColor: .blue)
                     
                     teamSection(label: "Team B", team: $teamBName, players: $teamBPlayers, teamColor: .red)
                     
-                    // Match Settings
                     VStack(alignment: .leading, spacing: 16) {
                         Text("Match Settings")
                             .font(.title3)
                             .bold()
                             .padding(.bottom, 4)
                         
-                        // Batting First Picker
                         VStack(alignment: .leading, spacing: 8) {
                             Text("Batting First")
                                 .font(.headline)
@@ -60,7 +56,6 @@ struct EnterPlayersView: View {
                             .padding(.vertical, 4)
                         }
                         
-                        // Overs Slider
                         VStack(alignment: .leading, spacing: 8) {
                             HStack {
                                 Text("Overs")
@@ -84,7 +79,6 @@ struct EnterPlayersView: View {
                     .cornerRadius(12)
                     .shadow(color: Color.black.opacity(0.05), radius: 5, x: 0, y: 2)
                     
-                    // Start Match Button
                     Button(action: startMatch) {
                         HStack {
                             Spacer()
